@@ -75,7 +75,7 @@ export default function SimpleTabs(props) {
           loadMore={props.fetchCoins}
         >
           {props.coins.map((coin) => (
-            <Coin coin={coin} />
+            <Coin key={coin.id} coin={coin} />
           ))}
         </InfiniteScroll>
       </TabPanel>

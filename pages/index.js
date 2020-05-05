@@ -18,7 +18,8 @@ class Index extends Component {
   }
 
   fetchCoins = async () => {
-    this.setState({ start: this.state.start + this.state.count });
+    const { start, count } = this.state;
+    this.setState({ start: start + count });
     const result = await fetch(
       `https://api.coinstats.app/public/v1/coins?skip=${this.state.start}&limit=${this.state.count}&currency=EUR`
     );
